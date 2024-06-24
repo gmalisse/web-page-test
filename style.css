@@ -1,0 +1,84 @@
+body{
+    background-color: #f5d8d8;
+    margin: 0;
+}
+.imagem-treino{
+    position: fixed;
+    opacity: 0.55;
+    width: 72vw; 
+    height: 100vh;
+
+}
+.retangulo{
+    width: 28vw; 
+    height: 100vh; 
+    background-color: #710252; 
+    position: fixed; 
+    top: 0px;
+    bottom: 0px; 
+    right: 0px; 
+    margin: 0;
+}
+.imagem-logo{
+    position: fixed;
+    width: 17vw;
+    height: 30vh;
+    top: 13vh;
+    right: 5vw; 
+}
+.email{
+    position: fixed;
+    top: 42vh;
+    right: 4vw; 
+    width: 19vw; 
+    height: 3vh;   
+    border: 1px solid black;
+    background-color: #f5d8d8;
+}
+.password{
+    position: fixed;
+    top: 46vh;
+    right: 4vw; 
+    width: 19vw; 
+    height: 3vh; 
+    border: 1px solid black;
+    background-color:#f5d8d8;
+}
+.esqueceu{
+    position: fixed;
+    top: 52vh;
+    right: 11vw; 
+    color: #f5d8d8;
+}
+.entrar{
+    position: fixed;
+    top: 60vh;
+    right: 9.5vw; 
+    background-color: #FF5C00;
+    color: #710252;
+    padding: 15px;
+    width: 10%;
+    font-weight: bold;
+    font-size: 18px;
+}
+.linha {
+    background: #f5d8d8;
+    margin-top: 72vh;
+    height: 0px;
+    width: 400px;
+}
+.cadastro{
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 81vh;
+    right: 11.3vw; 
+    color: #f5d8d8;
+}
+.logos{
+    position: fixed;
+    top: 85vh;
+    right: 8vw;
+    display: flex;
+    gap: 1.5vw;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Gympass</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <img src="imagens/treino.jpg" width="1374" height="928" class="imagem-treino">  
+
+        <div 
+            class="retangulo"><hr class="linha">
+        </div>
+
+        <img src="imagens/gympass-logo.png" class="imagem-logo">
+
+        <div class="logos">
+            <a href="https://www.instagram.com"><img src="imagens/instagram.png"></a>
+            <a href="https://accounts.google.com/v3/signin/identifier?\n=pt-BR&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fclient%3Dopera-gx%26q%3Dgmail%26sourceid%3Dopera%26ie%3DUTF-8%26oe%3DUTF-8&ec=GAlAAQ&authuser=0&ddm=0&flowName=GlifWebSignIn&flowEntry=AddSession"><img src="imagens/google.png"></a>
+            <a href="https://pt-br.facebook.com/login/device-based/regular/login/"><img src="imagens/facebook.png"></a>
+        </div>
+
+        <form id="login" action="submit_form" method="post">
+            <label for="email"></label><br>
+            <input type="email" id="email" name="email" placeholder="  e-mail" class="email"><br>
+            <label for="password"></label><br>
+            <input type="password" id="password" name="password" placeholder="  senha" class="password"><br>
+            <button type="submit" class="entrar">ENTRAR</button>
+        </form>
+
+        <br><br><br>
+
+        <a href="#esqueceu" id="esqueceu" class="esqueceu">Esqueceu a senha?</a>
+
+        <br><br><br>
+
+        <a href="#cadastro" id="cadastro" class="cadastro">Cadastre-se</a>
+    </body>
+    
+    <script type="text/javascript">          
+        document.addEventListener('DOMContentLoaded', function () {
+        const apiUrl = 'http://localhost:3001/login';
+        document.getElementById('login').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if(email.trim() === '' || password.trim() === '') {
+                alert('Por favor, preencha todos os campos.')
+                LimpaTela();
+            }
+            else {
+                fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                }),
+            })
+            .then(response => response.json())
+            .then(() => {
+                alert('Login efetuado com sucesso!');
+                LimpaTela();
+                })
+            }
+        });
+
+        function LimpaTela() {
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+        }
+        
+        document.getElementById('esqueceu').addEventListener('click', function (){
+            alert("Enviamos uma mensagem de redefinição de senha para o seu e-mail.")
+        })
+
+        document.getElementById('cadastro').addEventListener('click', function (){
+            alert("Essa função ainda será implementada. Agradecemos a compreensão.")
+        })
+    });
+    </script>
+</html>
